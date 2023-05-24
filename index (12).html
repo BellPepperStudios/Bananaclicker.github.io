@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <title>Bannana Clicker</title>
+  </head>
+  
+  <body style="background-color:green">
+    <h1 style="color:yellow">
+      Bannana Clicker
+    </h1>
+    
+    <p style="color:yellow">You have <span id="Money">0</span> Bannanas</p>
+    <p style="color:yellow">Your bannana value is <span id="value">1</span></p>
+    
+    <img src="https://www.freepnglogos.com/uploads/banana-png/banana-school-council-drapers-mills-primary-academy-little-0.png" onclick="AddMoney()" width="260">
+    <h2 style="color:yellow">Shop</h2>
+    
+    <ul>
+      <li>
+        <button style="button" onclick="Buy1()">Tasty Bannanas: cost: <span id="cost">20</span></button>
+      </li>
+      <li>
+        <button style="button" onclick="Buy2()">Bannana Farmer: cost: <span id="cost2">50</span></button>
+      </li>
+      <li>
+        <button style="button" onclick="Buy3()">Ultra Bannana Farmer: cost: <span id="cost3">200</span></button>
+      </li>
+      <li>
+        <button style="button" onclick="Buy4()">Radical Bannana Farmer: cost: <span id="cost4">400</span></button>
+      </li>
+      <li>
+        <button style="button" onclick="Buy5()">Breathtaking Bannana Farmer: cost: <span id="cost5">900</span></button>
+      </li>
+    </ul>
+    
+    <h1 style="color:yellow">Stats</h1>
+    <p style="color:yellow">You have <span id="farmer">0</span> Bannana farmers</p>
+    <p style="color:yellow">You have <span id="farmeru">0</span> Ultra bannana farmers</p>
+    <p style="color:yellow">You have <span id="radical">0</span> Radical Farmers</p>
+    <p style="color:yellow">You have <span id="breath">0</span> Breathtaking Farmers</p>
+    
+    <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <h1 style="color:yellow">Update Log</h1>
+    <p style="color:yellow">Added A radical farmer</p>
+    
+    
+    <script>
+    var Money = 0;
+    var value = 1;
+    var BuyPrice1 = 20;
+    var BuyPrice2 = 50;
+    var BuyPrice3 = 200;
+    var BuyPrice4 = 400;
+    var BuyPrice5 = 900;
+    var farmers = 0;
+    var UltraFarmers = 0;
+    var RadicalFarmer = 0;
+    var BreathFarmer = 0;
+    
+      function AddMoney(){
+        Money += value;
+        document.getElementById("Money").innerHTML = Money;
+      }
+        
+      function Buy1(){
+        if (Money >= BuyPrice1){
+        Money -= BuyPrice1;
+        value++;
+        BuyPrice1 += 20;
+        document.getElementById("Money").innerHTML = Money;
+        document.getElementById("value").innerHTML = value;
+        document.getElementById("cost").innerHTML = BuyPrice1;
+        }
+      }
+      
+      function Buy2(){
+        if (Money >= BuyPrice2){
+        Money -= BuyPrice2;
+        BuyPrice2 += 30;
+        farmers++;
+        document.getElementById("Money").innerHTML = Money;
+        document.getElementById("value").innerHTML = value;
+        document.getElementById("cost2").innerHTML = BuyPrice2;
+        document.getElementById("farmer").innerHTML = farmers;
+        }
+      }
+      
+      function Buy3(){
+        if (Money >= BuyPrice3){
+          Money -= BuyPrice3;
+          BuyPrice3 += 200;
+          UltraFarmers++;
+        document.getElementById("Money").innerHTML = Money;
+        document.getElementById("value").innerHTML = value;
+        document.getElementById("cost3").innerHTML = BuyPrice3;
+        document.getElementById("farmeru").innerHTML = UltraFarmers;
+        }
+      }
+      
+      function Buy4(){
+        if (Money >= BuyPrice4){
+          Money -= BuyPrice4;
+          BuyPrice4 += 200;
+          RadicalFarmer++;
+        document.getElementById("Money").innerHTML = Money;
+        document.getElementById("value").innerHTML = value;
+        document.getElementById("cost4").innerHTML = BuyPrice4;
+        document.getElementById("radical").innerHTML = RadicalFarmer;
+        }
+      }
+      
+      function Buy5(){
+        if (Money >= BuyPrice5){
+          Money -= BuyPrice5;
+          BuyPrice5 *= 2;
+          BreathFarmer++;
+        document.getElementById("Money").innerHTML = Money;
+        document.getElementById("value").innerHTML = value;
+        document.getElementById("cost5").innerHTML = BuyPrice5;
+        document.getElementById("breath").innerHTML = BreathFarmer;
+        }
+      }
+      
+      setInterval (function(){
+        Money += farmers;
+        document.getElementById("Money").innerHTML = Money;
+      }, 1000);
+      
+      setInterval (function(){
+        Money += UltraFarmers;
+        document.getElementById("Money").innerHTML = Money;
+      }, 390);
+      
+            setInterval (function(){
+        Money += RadicalFarmer;
+        document.getElementById("Money").innerHTML = Money;
+      }, 190);
+      
+       setInterval (function(){
+        Money += BreathFarmer;
+        document.getElementById("Money").innerHTML = Money;
+      }, 90);
+    </script>
+  </body>
+</html>
